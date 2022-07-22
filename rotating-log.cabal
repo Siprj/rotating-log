@@ -45,7 +45,6 @@ test-suite test-rotate
     , directory
     , filepath
     , time
-    , time-locale-compat
 
   ghc-options:    -Wall -fwarn-tabs -threaded
 
