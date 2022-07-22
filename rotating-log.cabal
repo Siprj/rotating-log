@@ -1,54 +1,53 @@
-name:                rotating-log
-version:             0.4.3
-description:         Size-limited, concurrent, automatically-rotating log writer.
-Synopsis:            Size-limited, concurrent, automatically-rotating log writer.
-license:             BSD3
-license-file:        LICENSE
-author:              Ozgun Ataman, Doug Beardsley
-maintainer:          doug.beardsley@soostone.com
-copyright:           Soostone Inc
-category:            Logging
-build-type:          Simple
-cabal-version:       >= 1.8
-homepage:            http://github.com/Soostone/rotating-log
+name:               rotating-log
+version:            0.4.3
+description:
+  Size-limited, concurrent, automatically-rotating log writer.
 
+synopsis:
+  Size-limited, concurrent, automatically-rotating log writer.
+
+license:            BSD3
+license-file:       LICENSE
+author:             Ozgun Ataman, Doug Beardsley
+maintainer:         doug.beardsley@soostone.com
+copyright:          Soostone Inc
+category:           Logging
+build-type:         Simple
+cabal-version:      >=1.8
+homepage:           http://github.com/Soostone/rotating-log
 extra-source-files:
-  README.md
   changelog.md
+  README.md
 
 library
-  hs-source-dirs: src
-
-  exposed-modules:
-    System.RotatingLog
-
+  hs-source-dirs:  src
+  exposed-modules: System.RotatingLog
   build-depends:
-    base               >= 4    && < 5,
-    bytestring         >= 0.8,
-    time               >= 1.5 && < 1.9,
-    old-locale         >= 1.0,
-    time-locale-compat,
-    filepath           >= 1.0,
-    directory          >= 1.0
+      base
+    , bytestring
+    , directory
+    , filepath
+    , old-locale
+    , time
+    , time-locale-compat
 
-  ghc-options: -Wall -fwarn-tabs
+  ghc-options:     -Wall -fwarn-tabs
 
 test-suite test-rotate
-  type: exitcode-stdio-1.0
-  main-is: TestRotate.hs
-  ghc-options: -Wall
-  hs-source-dirs: test, src
-  other-modules:
-    System.RotatingLog
+  type:           exitcode-stdio-1.0
+  main-is:        TestRotate.hs
+  ghc-options:    -Wall
+  hs-source-dirs: test src
+  other-modules:  System.RotatingLog
   build-depends:
-    base,
-    bytestring,
-    time,
-    time-locale-compat,
-    filepath,
-    directory
+      base
+    , bytestring
+    , directory
+    , filepath
+    , time
+    , time-locale-compat
 
-  ghc-options: -Wall -fwarn-tabs -threaded
+  ghc-options:    -Wall -fwarn-tabs -threaded
 
 source-repository head
   type:     git

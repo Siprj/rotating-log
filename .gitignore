@@ -6,3 +6,4 @@ TAGS
 *DS_*
 *.log
 .stack-work
+dist-newstyle
